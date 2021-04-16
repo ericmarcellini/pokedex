@@ -1,0 +1,23 @@
+:root {
+    font-size: 10px;
+    /* Colors */
+    --clr-light: ;
+    --clr-dark: ;
+    --clr-accent: ;
+    --clr-accent2: ;
+}
+
+html {
+    background-image: url(/img/background.jpg);
+    background-color: white;
+}
+
+body{
+    font-size: 2rem;
+    text-align: center;
+    background-color: black; /* provisional background color */
+    color: white; /* provisional font color */
+    padding: 2rem;
+    opacity: 70%;
+}
+
