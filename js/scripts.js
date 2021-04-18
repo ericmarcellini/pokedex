@@ -1,4 +1,5 @@
-let pokemonList = [
+let pokemonRepository =  (function (){
+        let pokemonList = [
     {name: 'Bulbasaur', 
             height: 0.7, 
             type:['grass','poison']},
@@ -10,13 +11,30 @@ let pokemonList = [
     {name: 'Squirtle', 
             height: 0.5, 
             type:['water']}
-];
+        ]
+        
+        return {
+                getAll: function() {
+                        return pokemonList;
+                },
 
+                add: function(pokemon){
+                        if (typeof pokemon === object){
+                                pokemon.List.push(pokemon);
+                        }else {console.log('Invalid data type')}   
+                }
+        };
 
-for (let i =0 ; i < pokemonList.length; i++){
-        if (pokemonList[i].height > 0.6){
-                document.write(pokemonList[i].name + ' ' + '(height:'+' '+pokemonList[i].height + ')'+' Wow thats a big one'+'<br>');
+})();
+
+pokemonRepository.getAll().forEach(function(pokemon){
+        if(pokemon.height > 0.6){
+                document.write(pokemon.name + ' (height: ' + pokemon.height +') '+'Wow thats a big one'+ '<br>')
         }else {
-                document.write(pokemonList[i].name + ' ' + '(height:'+' '+pokemonList[i].height + ')'+'<br>')
+                document.write(pokemon.name + ' '+ '(height: '+ pokemon.height +') '+'<br>');
         }
-} 
+});
+
+
+pokemonRepository.add('Charizard')
+
