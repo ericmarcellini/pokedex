@@ -12,20 +12,26 @@ let pokemonRepository =  (function (){
             height: 0.5, 
             type:['water']}
         ]
-        
+  
         return {
+                add: function(pokemon){
+                        if (typeof pokemon === 'object'){
+                            pokemonList.push(pokemon);
+                        }else {console.log('Invalid data type')}   
+                },
+                
                 getAll: function() {
                         return pokemonList;
-                },
-
-                add: function(pokemon){
-                        if (typeof pokemon === object){
-                                pokemon.List.push(pokemon);
-                        }else {console.log('Invalid data type')}   
                 }
+                
+                
         };
-
+        
+        
 })();
+pokemonRepository.add({name:'Charizard',
+                        height: 1.7,
+                        type:['fire','flying'] }) 
 
 pokemonRepository.getAll().forEach(function(pokemon){
         if(pokemon.height > 0.6){
@@ -36,5 +42,5 @@ pokemonRepository.getAll().forEach(function(pokemon){
 });
 
 
-pokemonRepository.add('Charizard')
+
 
