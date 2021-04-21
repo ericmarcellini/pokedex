@@ -12,34 +12,56 @@ let pokemonRepository =  (function (){
             height: 0.5, 
             type:['water']}
         ]
-  
-        return {
-                add: function(pokemon){
-                        if (typeof pokemon === 'object'){
-                            pokemonList.push(pokemon);
-                        }else {console.log('Invalid data type')}   
-                },
-                
-                getAll: function() {
-                        return pokemonList;
+
+        function showDetails(pokemon){
+                console.log(pokemon)
+        }
+
+        /* Loop creating pokemon buttons*/
+        function addListItem(pokemon){
+                let pokemonList = document.querySelector(".pokemon-list");
+                let listpokemon = document.createElement("li");
+                let button = document.createElement("button");
+                button.innerText = pokemon.name;
+                button.classList.add("button-style");
+                listpokemon.appendChild(button);
+                pokemonList.appendChild(listpokemon);
+                button.addEventListener('click', function (event) {
+                        showDetails(pokemon)
+                      });
+        };
+        /* Function to push new pokemon into the array*/
+        function add(pokemon){
+                if (typeof pokemon === 'object'){
+                pokemonList.push(pokemon);
+                }else {console.log('Invalid data type')}   
+                }
+        /* Function listing all the pokemons in the array*/        
+        function getAll() {
+                return pokemonList;
                 }
                 
-                
-        };
+        return {
+                add: add,
+                getAll: getAll,
+                addListItem: addListItem,
+                showDetails: showDetails
+              };   
+        
         
         
 })();
+/* Example of a pokemon being pushed into the Array*/
 pokemonRepository.add({name:'Charizard',
                         height: 1.7,
                         type:['fire','flying'] }) 
 
-pokemonRepository.getAll().forEach(function(pokemon){
-        if(pokemon.height > 0.6){
-                document.write(pokemon.name + ' (height: ' + pokemon.height +') '+'Wow thats a big one'+ '<br>')
-        }else {
-                document.write(pokemon.name + ' '+ '(height: '+ pokemon.height +') '+'<br>');
-        }
-});
+/* Prints all the pokemon from the array to the screen & adds the buttons from
+the addListItem function */
+pokemonRepository.getAll().forEach(function (pokemon) {
+                pokemonRepository.addListItem(pokemon);
+                              });
+
 
 
 

@@ -21,3 +21,18 @@ body{
     opacity: 70%;
 }
 
+.button-style{
+    background-color: white; /* provisional colors */
+    border: none;
+    padding: 2rem 3rem;
+    text-align: center;
+    display: inline-block;
+    font-size: 1.6rem;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: black; /* provisional colors */
+    width: 40%;
+    color: white; /* provisional colors */
+    border: 2px solid white; /* provisional colors */
+  }
