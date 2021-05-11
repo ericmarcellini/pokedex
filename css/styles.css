@@ -1,8 +1,7 @@
 :root {
-    font-size: 10px;
     /* Colors */
-    --clr-light: ;
-    --clr-dark: ;
+    --clr-light: white;
+    --clr-dark: black;
     --clr-accent: ;
     --clr-accent2: ;
 }
@@ -13,16 +12,15 @@ html {
 }
 
 body{
-    font-size: 2rem;
     text-align: center;
-    background-color: black; /* provisional background color */
-    color: white; /* provisional font color */
+    background-color: var(--clr-dark);  
+    color: var(--clr-light);
     padding: 2rem;
     opacity: 70%;
 }
 
 .button-style{
-    background-color: white; /* provisional colors */
+    background-color: var(--clr-light);
     border: none;
     padding: 2rem 3rem;
     text-align: center;
@@ -31,13 +29,13 @@ body{
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
-    background-color: black; /* provisional colors */
+    background-color: var(--clr-dark);
     width: 40%;
-    color: white; /* provisional colors */
-    border: 2px solid white; /* provisional colors */
+    color: var(--clr-light);
+    border: 2px solid var(--clr-light);
   }
 
-  /* modal */
+  /* modal */ 
   #modal-container {
     position: fixed;
     padding: 20px;
@@ -56,23 +54,11 @@ body{
     display: grid;
     text-align: center;
   }
-  
-  .modal {
-    margin: auto;
-    display: inline-block;
-    box-sizing: border-box;
-    background: #fff;
-    padding: 15px;
-    color: black;
-    width: 100%;
-    max-width: 700px;
-    text-align: left;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
-  }
-  
+ 
+ .modal {
+    color: var(--clr-dark);
+  } 
+ 
   .modal-close {
     float: right;
     -webkit-appearance: none;
