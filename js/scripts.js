@@ -4,13 +4,13 @@ let pokemonRepository =  (function (){
 
         /* Loop creating pokemon buttons*/
         function addListItem(pokemon){
-                let pokemonList = document.querySelector(".list-group");
-                let listPokemon = document.createElement("li");
+                let pokemonList = document.querySelector('.list-group');
+                let listPokemon = document.createElement('li');
                 listPokemon.classList.add('list-group-item', 'list-group-item-action');
-                let button = document.createElement("button");
+                let button = document.createElement('button');
 
                 button.innerText = pokemon.name;
-                button.classList.add("btn","btn-block");
+                button.classList.add('btn','btn-block');
                 button.setAttribute('data-target', 'data-toggle="modal"', 'modal', '#pokemonModal' );
 
                 pokemonList.appendChild(listPokemon);
@@ -76,12 +76,12 @@ let pokemonRepository =  (function (){
                   modalTitle.empty();
                   modalBody.empty();
 
-                  let pokemonName = $("<h1>" + pokemon.name + "</h1>");
+                  let pokemonName = $('<h1>' + pokemon.name + '</h1>');
                   let pokemonImage = $('<img class="modal-img" style="width:50%">');
-                  pokemonImage.attr("src", pokemon.imageUrl);
+                  pokemonImage.attr('src', pokemon.imageUrl);
 
-                  let pokemonHeight = $("<p>" + "Height: " + pokemon.height + "</p>")
-                  let pokemonWeight = $("<p>" + "Weight: " + pokemon.weight + "</p>")
+                  let pokemonHeight = $('<p>' + 'Height: ' + pokemon.height + '</p>')
+                  let pokemonWeight = $('<p>' + 'Weight: ' + pokemon.weight + '</p>')
 
                   let pokemonTypes = document.createElement('div');
                   let types = 'Types: ';
