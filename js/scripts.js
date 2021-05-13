@@ -81,7 +81,7 @@ let pokemonRepository =  (function (){
                   pokemonImage.attr('src', pokemon.imageUrl);
 
                   let pokemonHeight = $('<p>' + 'Height: ' + pokemon.height + ' CM'+ '</p>')
-                  let pokemonWeight = $('<p>' + 'Weight: ' + pokemon.weight + ' Pounds'+ '</p>')
+                  let pokemonWeight = $('<p>' + 'Weight: ' + pokemon.weight + ' LB'+ '</p>')
 
                   let pokemonTypes = document.createElement('div');
                   let types = 'Types: ';
