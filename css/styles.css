@@ -7,83 +7,95 @@
 }
 
 html {
-    background-image: url(/img/background.jpg);
-    background-color: white;
+  background-image: url(/img/background.jpg);
+  background-color: white;
 }
 
 body{
-    text-align: center;
-    background-color: var(--clr-dark);  
-    color: var(--clr-light);
-    padding: 2rem;
-    opacity: 70%;
+  text-align: center;
+  background-color: var(--clr-dark);  
+  color: var(--clr-light);
+  padding: 2rem;
+  opacity: 70%;
+}
+
+.list-group{
+  margin-left:75px;
+  margin-right:75px;
 }
 
 .button-style{
-    background-color: var(--clr-light);
-    border: none;
-    padding: 2rem 3rem;
-    text-align: center;
-    display: inline-block;
-    font-size: 1.6rem;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    background-color: var(--clr-dark);
-    width: 40%;
-    color: var(--clr-light);
-    border: 2px solid var(--clr-light);
+  background-color: var(--clr-light);
+  padding: 2rem 3rem;
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: var(--clr-dark);
+  color: var(--clr-light);
   }
+
+.btn {
+  border-radius: 0px;
+  outline: none;
+  border: none;
+}
+
+.btn:active {
+  border-style: outset;
+  border: none;
+}
 
   /* modal */ 
-  #modal-container {
-    position: fixed;
-    padding: 20px;
-    box-sizing: border-box;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+#modal-container {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
     
-    z-index: 99; 
+  z-index: 99; 
     
-    overflow: auto; 
+  overflow: auto; 
     
-    /* center the modal */
-    display: grid;
-    text-align: center;
+  /* center the modal */
+  display: grid;
+  text-align: center;
   }
  
- .modal {
-    color: var(--clr-dark);
-  } 
+.modal {
+  color: var(--clr-dark);
+} 
  
-  .modal-close {
-    float: right;
-    -webkit-appearance: none;
-    border: 0;
-    background: none;
-    color: #777;
-    text-decoration: underline;
-  }
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: #777;
+  text-decoration: underline;
+}
   
-  .modal h1 {
-    margin-top: 0;
-  }
+.modal h1 {
+  margin-top: 0;
+}
   
-  .modal p {
-    margin-bottom: 0;
-  }
+.modal p {
+  margin-bottom: 0;
+}
   
-  #modal-container {
-    display: none;
-  }
+#modal-container {
+  display: none;
+}
   
-  #modal-container.is-visible {
-    display: block;
-  }
+#modal-container.is-visible {
+  display: block;
+}
 
-  #show-modal {
-    display: none;
-  }
+#show-modal {
+  display: none;
+}
