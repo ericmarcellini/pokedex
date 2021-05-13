@@ -5,7 +5,10 @@
     --clr-accent: ;
     --clr-accent2: ;
 }
-
+.logo{
+  height: 80px;
+  width: 200px;
+}
 html {
   background-image: url(img/background.jpg);
   background-color: white;
