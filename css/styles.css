@@ -10,7 +10,7 @@
   width: 200px;
 }
 html {
-  background-image: url(img/background.jpg);
+  background-image: url(../img/background.jpg);
   background-color: white;
 }
 
