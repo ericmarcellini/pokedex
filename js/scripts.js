@@ -80,8 +80,8 @@ let pokemonRepository =  (function (){
                   let pokemonImage = $('<img class="modal-img" style="width:50%">');
                   pokemonImage.attr('src', pokemon.imageUrl);
 
-                  let pokemonHeight = $('<p>' + 'Height: ' + pokemon.height + ' CM'+ '</p>')
-                  let pokemonWeight = $('<p>' + 'Weight: ' + pokemon.weight + ' LB'+ '</p>')
+                  let pokemonHeight = $('<p>' + 'Height: ' + pokemon.height + ' cm'+ '</p>')
+                  let pokemonWeight = $('<p>' + 'Weight: ' + pokemon.weight + ' lb'+ '</p>')
 
                   let pokemonTypes = document.createElement('div');
                   let types = 'Types: ';
