@@ -4,10 +4,10 @@ This application loads data from an external API and displays the items as a lis
 API: https://pokeapi.co/api/v2/pokemon/
 
 ## Built using
-JavaScript
-Bootstrap
-CSS
-HTML
+- JavaScript
+- Bootstrap
+- CSS
+- HTML
 
 
 ## Key Features:
