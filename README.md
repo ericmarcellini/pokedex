@@ -14,3 +14,6 @@ API: https://pokeapi.co/api/v2/pokemon/
 - Load data from an external source (API),
 - View a list of items within the API database,
 - On user action to view details for each item.
+
+## App is live at:
+https://ericmarcellini.github.io/pokedex/
