@@ -1,4 +1,4 @@
-# PokeDex rocks
+# PokeDex
 This application loads data from an external API and displays the items as a list, with a modal opening, giving more information on each item.
 
 API: https://pokeapi.co/api/v2/pokemon/
