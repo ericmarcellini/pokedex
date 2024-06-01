@@ -17,3 +17,5 @@ API: https://pokeapi.co/api/v2/pokemon/
 
 ## App is live at:
 https://ericmarcellini.github.io/pokedex/
+
+## Project Restarted in 2024
