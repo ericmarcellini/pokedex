@@ -11,43 +11,67 @@ let pokemonRepository = (function () {
   }
   /* Function to create and add a list item for each Pokémon */
   function addListItem(pokemon) {
-      // Select the list group element from the DOM
-      let pokemonList = document.querySelector('.list-group');
-      // Create a new list item element
-      let listPokemon = document.createElement('li');
-      // Add classes to the list item for styling
-      listPokemon.classList.add('list-group-item', 'list-group-item-action', 'mb-2');
-      // Create a new button element
-      let button = document.createElement('button');
+    // Select the list group element from the DOM
+    let pokemonListGroup = document.querySelector('.pokemon-list-group');
+    
+    // Check if a new row needs to be added
+    if (pokemonListGroup.children.length % 4 === 0) {
+        // Create a new row element
+        let row = document.createElement('div');
+        // Add classes to the row for styling
+        row.classList.add('row');
+        // Append the row to the list group
+        pokemonListGroup.appendChild(row);
+    }
 
-      // Set the button text to the Pokémon's name
-      button.innerText = capitalize(pokemon.name);
-      // Add classes to the button for styling
-      button.classList.add('btn', 'btn-block');
-      // Set the data attributes for the modal
-      button.setAttribute('data-target', 'data-toggle="modal"', 'modal', '#pokemonModal');
+    // Get the last row element
+    let lastRow = pokemonListGroup.lastElementChild;
 
-      // Create an image element for the Pokémon
-      let image = document.createElement('img');
-      // Set the image source to the Pokémon's image URL
-      image.src = pokemon.imageUrl;
-      // Set the image size and margin
-      image.style.width = '50px';
-      image.style.height = '50px';
-      image.style.marginRight = '10px';
+    // Create a new column for the pokemon
+    let colPokemon = document.createElement('div');
+    colPokemon.classList.add('col-md-3', 'mb-2');
 
-      // Prepend the image to the button
-      button.prepend(image);
-      // Append the button to the list item
-      listPokemon.appendChild(button);
-      // Append the list item to the list group
-      pokemonList.appendChild(listPokemon);
+    // Create a new list item element
+    let listPokemon = document.createElement('li');
+    // Add classes to the list item for styling
+    listPokemon.classList.add('list-group-item', 'list-group-item-action');
 
-      // Add an event listener to the button to show details when clicked
-      button.addEventListener('click', function () {
-          showDetails(pokemon);
-      });
-  }
+    // Create a new button element
+    let button = document.createElement('button');
+
+    // Set the button text to the Pokémon's name
+    button.innerText = capitalize(pokemon.name);
+    // Add classes to the button for styling
+    button.classList.add('btn', 'btn-block');
+
+    // Set the data attributes for the modal
+    button.setAttribute('data-toggle', 'modal');
+    button.setAttribute('data-target', '#pokemonModal');
+
+    // Create an image element for the Pokémon
+    let image = document.createElement('img');
+    // Set the image source to the Pokémon's image URL
+    image.src = pokemon.imageUrl;
+    // Set the image size and margin
+    image.style.width = '50px';
+    image.style.height = '50px';
+    image.style.marginRight = '10px';
+
+    // Prepend the image to the button
+    button.prepend(image);
+    // Append the button to the list item
+    listPokemon.appendChild(button);
+    // Append the list item to the column
+    colPokemon.appendChild(listPokemon);
+    // Append the column to the last row
+    lastRow.appendChild(colPokemon);
+
+    // Add an event listener to the button to show details when clicked
+    button.addEventListener('click', function () {
+        showDetails(pokemon);
+    });
+}
+
 
   /* Function to add a new Pokémon to the array */
   function add(pokemon) {
@@ -118,23 +142,7 @@ let pokemonRepository = (function () {
       });
   }
 
-  let pokemonListGroup = document.querySelector('.pokemon-list-group');
-  /* Function checks if a new row needs to be added */
-  if (pokemonListGroup.childrenElementCount % 4 === 0) {
-        // Create a new row element
-        let row = document.createElement('div');
-        // Add classes to the row for styling
-        row.classList.add('row');
-        // Append the row to the list group
-        pokemonListGroup.appendChild(row);
-    }
 
-  /* get the last row element */
-  let lastRow = pokemonListGroup.lastElementChild; 
-  
-  // create a new column for the pokemon
-  let colPokemon = document.createElement('div');
-  colPokemon.classList.add('col-md-3', 'mb-2');
 
   /* Function to display the modal with Pokémon details */
   function showModal(pokemon) {

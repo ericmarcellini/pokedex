@@ -21,7 +21,7 @@ body{
   padding: 2rem;
   opacity: 70%;
 }
-
+/*  */
 .list-group{
   margin-left:75px;
   margin-right:75px;
@@ -29,7 +29,7 @@ body{
 
 .button-style{
   background-color: var(--clr-light);
-  padding: 2rem 3rem;
+  padding: 1rem 2rem; /* Reduced padding */
   text-align: center;
   font-size: 1.6rem;
   margin: 4px 2px;
@@ -37,7 +37,14 @@ body{
   cursor: pointer;
   background-color: var(--clr-dark);
   color: var(--clr-light);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .button-style {
+    padding: 0.5rem 1rem;
   }
+}
 
 .btn {
   border-radius: 0px;
