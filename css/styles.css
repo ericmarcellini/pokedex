@@ -11,7 +11,7 @@
 }
 html {
   background-image: url(../img/background.jpg);
-  background-color: white;
+  background-color: black;
 }
 
 body{
@@ -19,7 +19,7 @@ body{
   background-color: var(--clr-dark);  
   color: var(--clr-light);
   padding: 2rem;
-  opacity: 70%;
+  opacity: 88%;
 }
 /*  */
 .list-group{
@@ -28,7 +28,7 @@ body{
 }
 
 .button-style{
-  background-color: var(--clr-light);
+  background-color: var(--clr-dark);
   padding: 1rem 2rem; /* Reduced padding */
   text-align: center;
   font-size: 1.6rem;
@@ -36,7 +36,7 @@ body{
   transition-duration: 0.4s;
   cursor: pointer;
   background-color: var(--clr-dark);
-  color: var(--clr-light);
+  color: var(--clr-dark);
 }
 
 /* Media query for smaller screens */
@@ -59,6 +59,11 @@ body{
 
   /* modal */ 
 #modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   position: fixed;
   padding: 20px;
   box-sizing: border-box;
@@ -98,14 +103,18 @@ body{
   margin-bottom: 0;
 }
   
-#modal-container {
-  display: none;
-}
-  
 #modal-container.is-visible {
   display: block;
 }
 
 #show-modal {
   display: none;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

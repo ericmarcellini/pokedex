@@ -29,7 +29,7 @@ let pokemonRepository = (function () {
 
     // Create a new column for the pokemon
     let colPokemon = document.createElement('div');
-    colPokemon.classList.add('col-md-3', 'mb-2');
+    colPokemon.classList.add('col-md-2', 'mb-2');
 
     // Create a new list item element
     let listPokemon = document.createElement('li');
@@ -53,8 +53,8 @@ let pokemonRepository = (function () {
     // Set the image source to the Pokémon's image URL
     image.src = pokemon.imageUrl;
     // Set the image size and margin
-    image.style.width = '50px';
-    image.style.height = '50px';
+    image.style.width = '80px';
+    image.style.height = '80px';
     image.style.marginRight = '10px';
 
     // Prepend the image to the button
@@ -167,16 +167,22 @@ let pokemonRepository = (function () {
       // Create and append the Pokémon types
       let pokemonTypes = document.createElement('div');
       let types = 'Types: ';
-      pokemon.types.forEach(function (type) {
-          types += type.type.name + ', ';
+      pokemon.types.forEach(function (type, index) {
+          types += capitalize(type.type.name);
+          if (index < pokemon.types.length - 1) {
+              types += ', ';
+          }
       });
       pokemonTypes.innerHTML = types;
 
       // Create and append the Pokémon abilities
       let pokemonAbilities = document.createElement('span');
       let abilities = 'Abilities: ';
-      pokemon.abilities.forEach(function (ability) {
-          abilities += ability.ability.name + ', ';
+      pokemon.abilities.forEach(function (ability, index) {
+          abilities += capitalize(ability.ability.name);
+          if (index < pokemon.abilities.length - 1) {
+              abilities += ', ';
+          }
       });
       pokemonAbilities.innerHTML = abilities;
 
