@@ -118,6 +118,24 @@ let pokemonRepository = (function () {
       });
   }
 
+  let pokemonListGroup = document.querySelector('.pokemon-list-group');
+  /* Function checks if a new row needs to be added */
+  if (pokemonListGroup.childrenElementCount % 4 === 0) {
+        // Create a new row element
+        let row = document.createElement('div');
+        // Add classes to the row for styling
+        row.classList.add('row');
+        // Append the row to the list group
+        pokemonListGroup.appendChild(row);
+    }
+
+  /* get the last row element */
+  let lastRow = pokemonListGroup.lastElementChild; 
+  
+  // create a new column for the pokemon
+  let colPokemon = document.createElement('div');
+  colPokemon.classList.add('col-md-3', 'mb-2');
+
   /* Function to display the modal with Pokémon details */
   function showModal(pokemon) {
       // Select the modal body and title elements
