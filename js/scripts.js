@@ -5,6 +5,10 @@ let pokemonRepository = (function () {
   // API URL to fetch the first 151 Pokémon
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=151';
 
+  /* Function to capitalize the first letter of a string */
+  function capitalize(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+  }
   /* Function to create and add a list item for each Pokémon */
   function addListItem(pokemon) {
       // Select the list group element from the DOM
@@ -17,7 +21,7 @@ let pokemonRepository = (function () {
       let button = document.createElement('button');
 
       // Set the button text to the Pokémon's name
-      button.innerText = pokemon.name;
+      button.innerText = capitalize(pokemon.name);
       // Add classes to the button for styling
       button.classList.add('btn', 'btn-block');
       // Set the data attributes for the modal
@@ -125,7 +129,7 @@ let pokemonRepository = (function () {
       modalBody.empty();
 
       // Create and append the Pokémon name
-      let pokemonName = $('<h1>' + pokemon.name + '</h1>');
+      let pokemonName = $('<h1>' + capitalize(pokemon.name) + '</h1>');
       // Create and append the Pokémon image
       let pokemonImage = $('<img class="modal-img" style="width:50%">');
       pokemonImage.attr('src', pokemon.imageUrl);
@@ -138,7 +142,7 @@ let pokemonRepository = (function () {
       let pokemonTypes = document.createElement('div');
       let types = 'Types: ';
       pokemon.types.forEach(function (type) {
-          types += type.type.name + ' ';
+          types += type.type.name + ', ';
       });
       pokemonTypes.innerHTML = types;
 
@@ -146,7 +150,7 @@ let pokemonRepository = (function () {
       let pokemonAbilities = document.createElement('span');
       let abilities = 'Abilities: ';
       pokemon.abilities.forEach(function (ability) {
-          abilities += ability.ability.name + ' ';
+          abilities += ability.ability.name + ', ';
       });
       pokemonAbilities.innerHTML = abilities;
 
