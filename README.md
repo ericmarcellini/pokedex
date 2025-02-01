@@ -3,12 +3,18 @@ This application loads data from an external API and displays the items as a lis
 
 API: https://pokeapi.co/api/v2/pokemon/
 
-## Built using
+# Project Restarted in 2025
+
+# Initially Built using
 - JavaScript
 - Bootstrap
 - CSS
 - HTML
 
+# Now being rebuilt in:
+- Typescript
+- NextJs
+- TailwindCSS
 
 ## Key Features:
 - Load data from an external source (API),
@@ -18,4 +24,4 @@ API: https://pokeapi.co/api/v2/pokemon/
 ## App is live at:
 https://ericmarcellini.github.io/pokedex/
 
-## Project Restarted in 2024
+
