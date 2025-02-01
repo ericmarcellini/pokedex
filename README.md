@@ -3,7 +3,8 @@ This application loads data from an external API and displays the items as a lis
 
 API: https://pokeapi.co/api/v2/pokemon/
 
-## Project Restarted in 2025
+# Project Restarted in 2025
+
 # Initially Built using
 - JavaScript
 - Bootstrap
