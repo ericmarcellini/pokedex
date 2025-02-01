@@ -1,23 +1,38 @@
-import type { Metadata } from "next"
-import Introduction from "@/components/introduction"
-import Skills from "@/components/skills"
-import Projects from "@/components/projects"
-import Contact from "@/components/contact"
+import React from 'react';
+import Head from 'next/head';
+import PokemonList from '../components/PokemonList';
 
-export const metadata: Metadata = {
-  title: "Eric Marcellini - Web Developer Portfolio",
-  description: "Showcase of web development projects and skills",
-}
-
-export default function Home() {
+const Home = () => {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
-      <div className="container mx-auto px-4 py-16 space-y-24">
-        <Introduction />
-        <Skills />
-        <Projects />
-        <Contact />
-      </div>
-    </main>
-  )
-}
+    <>
+      <Head>
+        <title>PokeDex</title>
+        <meta charSet="UTF-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossOrigin="anonymous"
+        />
+        <link rel="stylesheet" href="css/styles.css" />
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+      </Head>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a className="navbar-brand" href="#">
+          <div className="pokedex-logo">
+            <img src="img/Pokédex_logo.webp" className="logo" alt="PokeDex Logo" />
+          </div>
+        </a>
+      </nav>
+      <br />
+      <PokemonList />
+    </>
+  );
+};
+
+export default Home;
