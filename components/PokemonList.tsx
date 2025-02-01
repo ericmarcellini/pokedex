@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react';
 import PokemonListItem from './PokemonListItem';
 import PokemonModal from './PokemonModal';
